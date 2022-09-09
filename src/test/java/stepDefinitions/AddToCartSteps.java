@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class AddToCartSteps {
 
     WebDriver driver;
+
     @Given("user opens Amazon")
     public void user_opens_amazon() {
         System.setProperty("webdriver.chrome.driver", "C://Users//folkl//Desktop//EPAM//Automation testing module//chromedriver_win32//chromedriver.exe/");
@@ -39,9 +40,9 @@ public class AddToCartSteps {
     @Then("user verifies that is in the cart")
     public void user_verifies_that_is_in_the_cart() {
         WebElement cart = driver.findElement(By.id("attach-sidesheet-view-cart-button"));
-        Assert.assertEquals(cart.getText(),"1");
+        Assert.assertEquals(cart.getText(), "1");
         WebElement findItemAddedToCart = driver.findElement(By.xpath("//span[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']"));
-        Assert.assertEquals(findItemAddedToCart.getText(),"Added to Cart");
+        Assert.assertEquals(findItemAddedToCart.getText(), "Added to Cart");
         System.out.println("okay");
     }
 }
